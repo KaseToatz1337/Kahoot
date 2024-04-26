@@ -52,8 +52,9 @@ window.onload = () => {
             body: formData
         })
         response = await request.json();
-        text.innerText = response["message"];
-        if (response["type"] == "error")
+        console.log(response.message);
+        text.innerText = response.message;
+        if (response.type == "error")
         {
             text.style.color = "red";
         }
