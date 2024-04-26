@@ -10,6 +10,7 @@ import asyncio
 import random
 import itertools
 
+from argparse import ArgumentParser
 from fastapi import FastAPI, Form
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -124,4 +125,7 @@ async def flood(pin: int = Form(0), naming: str = Form(""), name: str = Form("")
     return {"message": "Game finished.", "type": "success"}
 
 if __name__ == "__main__":
-    uvicorn.run("app:app", host="0.0.0.0", port=80)
+    argparser = ArgumentParser()
+    argparser.add_argument("--port", "-p", type=int, default=80)
+    args = argparser.parse_args()
+    uvicorn.run("app:app", host="0.0.0.0", port=args.port)
