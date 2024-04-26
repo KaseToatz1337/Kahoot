@@ -107,7 +107,7 @@ async def flood(pin: int = Form(0), naming: str = Form(""), name: str = Form("")
         async with session.get(f"https://play.kahoot.it/reserve/session/{pin}/?{int(time.time() * 1000)}") as response:
             if "x-kahoot-session-token" not in response.headers:
                 return JSONResponse({"message": "Invalid PIN specified.", "type": "error"}, 400)
-    if len(name) < 2 or len(name) > 15:
+    if len(name) < 2 or len(name) > 15 and naming != "random":
         return JSONResponse({"message": "Invalid name specified.", "type": "error"}, 400)
     if amount < 1 or amount > 2000:
         return JSONResponse({"message": "Invalid amount specified.", "type": "error"}, 400)
