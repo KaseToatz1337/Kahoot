@@ -1,0 +1,117 @@
+body
+{
+    margin: 0px;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(56, 18, 114);
+}
+
+#container
+{
+    display: flex;
+    flex-direction: column;
+}
+
+input
+{
+    outline: none;
+}
+
+#rectangle
+{
+    position: fixed;
+    background-color: black;
+    transform: rotate(45deg);
+    opacity: 0.1;
+    top: -15vmin;
+    left: -15vmin;
+    min-width: 75vmin;
+    min-height: 75vmin;
+    z-index: -1;
+}
+
+#circle
+{
+    position: fixed;
+    border-radius: 50%;
+    background-color: black;
+    opacity: 0.1;
+    bottom: -15vmin;
+    right: -15vmin;
+    min-width: 75vmin;
+    min-height: 75vmin;
+    z-index: -1;
+}
+
+#logo
+{
+    background-image: url("/html/assets/logo.svg");
+    height: 80px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 30px;
+}
+
+#form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+input, select
+{
+    outline: none;
+    height: 40px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgb(51, 51, 51);
+    border: 0.125rem solid rgb(204, 204, 204);
+    border-radius: 5px;
+    background-color: white;
+    transition: border-color 0.25s;
+}
+
+select
+{
+    color: #9191A0;
+    height: 46px;
+}
+
+input:focus:hover, select:focus:hover
+{
+    border-color: rgb(51, 51, 51);
+}
+
+input:focus, select:focus
+{
+    border-color: #0060DF;
+}
+
+#flood
+{
+    background-color: rgb(51, 51, 51);
+    color: white;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px -4px inset;
+    padding: 0px 16px 4px;
+    min-height: 46px;
+    cursor: pointer;
+}
+
+#flood:hover
+{
+    background-color: rgb(47, 47, 47);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px -2px inset;
+    margin-top: 2px;
+    padding-bottom: 2px;
+    min-height: 44px;
+}
