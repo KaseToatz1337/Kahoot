@@ -49,10 +49,12 @@ window.onload = () => {
         text.style.color = "green";
         try
         {
-            var request = await fetch("/api/flood", {
+            fetch("/api/flood", {
                 method: "POST",
                 body: formData
-            });
+            }).then((response) => {
+                console.log("YOUR MOMM");
+            })
             response = await request.json();
         }
         catch (exc)
