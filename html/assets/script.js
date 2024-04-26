@@ -47,7 +47,7 @@ window.onload = () => {
         formData.append("amount", parseInt(amount.value));
         text.value = "Flooding in progress...";
         text.style.color = "green";
-        var request = await fetch("http://127.0.0.1/flood", {
+        var request = await fetch("/api/flood", {
             method: "POST",
             body: formData
         })
