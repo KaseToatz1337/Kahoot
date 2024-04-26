@@ -47,21 +47,11 @@ window.onload = () => {
         formData.append("amount", parseInt(amount.value));
         text.innerText = "Flooding in progress...";
         text.style.color = "green";
-        try
-        {
-            fetch("/api/flood", {
-                method: "POST",
-                body: formData
-            }).then((response) => {
-                console.log("YOUR MOMM");
-            })
-            response = await request.json();
-        }
-        catch (exc)
-        {
-            console.log("FUCK OFF");
-        }
-        console.log(response.message);
+        var request = fetch("/api/flood", {
+            method: "POST",
+            body: formData
+        });
+        response = await request.json();
         text.innerText = response.message;
         if (response.type == "error")
         {
