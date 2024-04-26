@@ -51,7 +51,7 @@ window.onload = () => {
             method: "POST",
             body: formData
         });
-        response = await request.json();
+        var response = await request.json();
         text.innerText = response.message;
         if (response.type == "error")
         {
