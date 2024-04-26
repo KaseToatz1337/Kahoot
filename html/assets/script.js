@@ -45,14 +45,14 @@ window.onload = () => {
         formData.append("naming", naming.value)
         formData.append("name", name.value);
         formData.append("amount", parseInt(amount.value));
-        text.value = "Flooding in progress...";
+        text.innerText = "Flooding in progress...";
         text.style.color = "green";
         var request = await fetch("/api/flood", {
             method: "POST",
             body: formData
         })
         response = await request.json();
-        text.value = response.message;
+        text.innerText = response.message;
         if (response.type == "error")
         {
             text.style.color = "red";

@@ -13,14 +13,12 @@ import itertools
 from argparse import ArgumentParser
 from fastapi import FastAPI, Form
 from fastapi.responses import JSONResponse
-from fastapi.middleware.cors import CORSMiddleware
 
 class App(FastAPI):
 
     def __init__(self) -> None:
         super().__init__(title="Kahoot API", openapi_url=None)
-        self.add_middleware(CORSMiddleware, allow_origins=["*"])
-        self.semaphore = asyncio.Semaphore(10)
+        self.semaphore = asyncio.Semaphore(5)
 
     async def connect(self, pin: int, name: str, number: int, namerator: bool = False) -> None:
         try:
